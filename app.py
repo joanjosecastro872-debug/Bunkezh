@@ -95,7 +95,7 @@ def americano_a_decimal(cuota_am):
     try:
         val = float(cuota_am)
         return round((val / 100.0) + 1.0, 2) if val > 0 else round((100.0 / abs(val)) + 1.0, 2)
-    except:
+    except Exception:
         return None
 
 def decimal_a_americano(dec):
@@ -105,5 +105,5 @@ def decimal_a_americano(dec):
             return f"+{int(round((dec - 1.0) * 100))}"
         else:
             return f"{int(round(-100.0 / (dec - 1.0)))}"
-    except:
-
+    except Exception:
+        return None
